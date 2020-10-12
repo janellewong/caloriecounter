@@ -1,11 +1,30 @@
-# My Personal Project
+# Calorie Counter
 
-## A subtitle
+## Description
 
-A *bulleted* list:
-- item 1
-- item 2
-- item 3
 
-An example of text with **bold** and *italic* fonts.  Note that the IntelliJ markdown previewer doesn't seem to render 
-the bold and italic fonts correctly but they will appear correctly on GitHub.
+**What will the application do?**
+
+ - Record the food you eat every day into 4 categories: Breakfast, Lunch, Dinner, and Snack 
+ - When a person uses this app, it will ask for them to log down what they ate, as well as 
+ how much of that foods they ate, and how many calories it has. For example, one log could be 
+ *Skim Milk, 1 cup, 120 calories*. 
+ - Total the calories for each meal and also for the whole day
+ - Make calculations like averaging out the calories you have eaten for the week
+ 
+ 
+ **Who will use it?**
+ 
+ Those who want to track what they eat will use this application. 
+ This includes those on a diet, or those who want to control their calorie intake
+
+ **Why is this project of interest to me?**
+ 
+ I am interested in making this project because one of the goals for this quarantine
+ season is to lose a few pounds, as well as develop healthier eating habits.
+ I believe that an application like this one will help me keep track of what I am eating
+ and help me go on a diet. 
+ 
+ 
+ ## User Stories
+ 
