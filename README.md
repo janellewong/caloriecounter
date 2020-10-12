@@ -35,4 +35,4 @@
  total and for each meal
  - As a user, I want to be able to see the remaining number of calories I can eat today
  in order to not go past my calorie limit
- - As a user, I want to be able to see the number of incomplete and number of completed tasks on my to-do list
+ - As a user, I want to be able to see what I ate in the past, up to a full week
