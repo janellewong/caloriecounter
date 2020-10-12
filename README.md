@@ -10,6 +10,7 @@
  how much of that foods they ate, and how many calories it has. For example, one log could be 
  *Skim Milk, 1 cup, 120 calories*. 
  - Total the calories for each meal and also for the whole day
+ - Set a calorie limit goal for the week, and know when that limit is breached
  - Make calculations like averaging out the calories you have eaten for the week
  
  
@@ -27,4 +28,11 @@
  
  
  ## User Stories
- 
+ - As a user, I want to be able to create a new food and add it to my day, 
+ in categories of Breakfast, Lunch, Dinner, and Snack
+ - As a user, I want to be able to view what list of foods I have eaten today 
+ - As a user, I want to be able to view how many calories I have eaten today in 
+ total and for each meal
+ - As a user, I want to be able to see the remaining number of calories I can eat today
+ in order to not go past my calorie limit
+ - As a user, I want to be able to see the number of incomplete and number of completed tasks on my to-do list
