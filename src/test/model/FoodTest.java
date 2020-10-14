@@ -11,14 +11,7 @@ class FoodTest {
     @BeforeEach
     void runBefore() {
 
-        food = new Food("ham", 100, 145);
-    }
-
-    @Test
-    void testChangeAmount() {
-        food.changeAmount(500);
-        assertEquals(500, food.getAmount());
-
+        food = new Food("ham", 145);
     }
 
     @Test

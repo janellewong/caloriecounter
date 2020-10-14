@@ -24,9 +24,24 @@ public class Meal {
         meal.add(food);
     }
 
-    //EFFECTS: remove food from meal
-    public void removeFood(Food food) {
-        meal.remove(food);
+    //EFFECTS: removes the first food with name from meal
+    public void removeFood(String name) {
+        Food temp = null;
+        for (Food f : meal) {
+            if (f.getName().equals(name)) {
+                temp = f;
+            }
+        }
+        meal.remove(temp);
+    }
+
+    public boolean containsFood(String name) {
+        for (Food f : meal) {
+            if (f.getName().equals(name)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     //EFFECTS: adds all calories in meal list

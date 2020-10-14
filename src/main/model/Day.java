@@ -18,6 +18,12 @@ public class Day {
         return goal;
     }
 
+    //MODIFIES: this
+    //EFFECTS: changes your goal
+    public void changeGoal(int newGoal) {
+        goal = newGoal;
+    }
+
     //REQUIRES: number of meals in a day cannot exceed 3 (Breakfast, Lunch, Dinner)
     // EFFECTS: returns number of meals in day
     public int getNumberMeals() {
@@ -37,8 +43,23 @@ public class Day {
     }
 
     //EFFECTS: remove meal from list
-    public void removeMeal(Meal meal) {
-        day.remove(meal);
+    public void removeMeal(String mealType) {
+        Meal temp = null;
+        for (Meal m: day) {
+            if (m.getMealType().equals(mealType)) {
+                temp = m;
+            }
+        }
+        day.remove(temp);
+    }
+
+    public boolean containsMeal(String name) {
+        for (Meal m : day) {
+            if (m.getMealType().equals(name)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 
@@ -76,9 +97,6 @@ public class Day {
             return false;
         }
     }
-
-
-
 
 
 }

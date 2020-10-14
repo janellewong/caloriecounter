@@ -21,21 +21,27 @@ public class DayTest {
     @BeforeEach
     void runBefore() {
         day = new Day(1800);
-        meal1 = new Meal("Breakfast");
-        meal2 = new Meal("Lunch");
-        meal3 = new Meal("Dinner");
-        meal4 = new Meal("Breakfast");
+        meal1 = new Meal("breakfast");
+        meal2 = new Meal("lunch");
+        meal3 = new Meal("dinner");
+        meal4 = new Meal("breakfast");
 
-        food1 = new Food("ham", 100, 145);
-        food2 = new Food("bread", 300, 430);
-        food3 = new Food("mayo", 100, 200);
-        food4 = new Food ("ice cream", 1000, 2000);
+        food1 = new Food("ham", 145);
+        food2 = new Food("bread", 430);
+        food3 = new Food("mayo", 200);
+        food4 = new Food("ice cream", 2000);
     }
 
     @Test
     void testAddMealGood() {
         day.addMeal(meal2);
         assertEquals(1, day.getNumberMeals());
+    }
+
+    @Test
+    void testChangeGoal() {
+        day.changeGoal(2000);
+        assertEquals(2000, day.getGoal());
     }
 
     @Test
@@ -53,8 +59,20 @@ public class DayTest {
     @Test
     void testRemoveMeal() {
         day.addMeal(meal1);
-        day.removeMeal(meal1);
+        day.removeMeal("breakfast");
         assertEquals(0, day.getNumberMeals());
+    }
+
+    @Test
+    void testContainsMealTrue() {
+        day.addMeal(meal1);
+        assertTrue(day.containsMeal("breakfast"));
+    }
+
+    @Test
+    void testContainsMealFalse() {
+        day.addMeal(meal1);
+        assertFalse(day.containsMeal("lunch"));
     }
 
     @Test

@@ -3,7 +3,7 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 class MealTest {
@@ -15,24 +15,36 @@ class MealTest {
     @BeforeEach
     void runBefore() {
         meal = new Meal("Breakfast");
-        food1 = new Food("ham", 100, 145);
-        food2 = new Food("bread", 300, 430);
-        food3 = new Food("mayo", 100, 200);
+        food1 = new Food("ham", 100);
+        food2 = new Food("bread", 300);
+        food3 = new Food("mayo", 100);
     }
 
     @Test
     void testAddFood() {
         meal.addFood(food1);
-        assertEquals(145, meal.addCalories());
+        assertEquals(100, meal.addCalories());
 
     }
 
     @Test
     void testRemoveFood() {
         meal.addFood(food1);
-        meal.removeFood(food1);
+        meal.removeFood("ham");
         assertEquals(0, meal.addCalories());
 
+    }
+
+    @Test
+    void testContainsFoodTrue() {
+        meal.addFood(food1);
+        assertTrue(meal.containsFood("ham"));
+    }
+
+    @Test
+    void testContainsFoodFalse() {
+        meal.addFood(food1);
+        assertFalse(meal.containsFood("bread"));
     }
 
     @Test
@@ -40,7 +52,7 @@ class MealTest {
         meal.addFood(food1);
         meal.addFood(food2);
         meal.addFood(food3);
-        assertEquals(775, meal.addCalories());
+        assertEquals(500, meal.addCalories());
 
     }
 
