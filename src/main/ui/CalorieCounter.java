@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 //Calorie Counter application
 public class CalorieCounter {
+
+
     private Day day;
     private Meal breakfast;
     private Meal lunch;
@@ -83,7 +85,6 @@ public class CalorieCounter {
     // EFFECTS: modifies the selected meal by
     // either removing or adding food
     private void modifyMeal() {
-        System.out.println("Which meal would you like to change?");
         Meal selected = selectMeal();
         String selection = "";
 
