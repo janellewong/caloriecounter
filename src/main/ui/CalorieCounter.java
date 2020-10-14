@@ -87,7 +87,6 @@ public class CalorieCounter {
     private void modifyMeal() {
         Meal selected = selectMeal();
         String selection = "";
-        System.out.println("Which meal would you like to add food to?");
 
         while (!(selection.equals("a") || selection.equals("r"))) {
             System.out.println("a for Add food");
