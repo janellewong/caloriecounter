@@ -28,10 +28,18 @@ class MealTest {
     }
 
     @Test
-    void testRemoveFood() {
+    void testRemoveFoodTrue() {
         meal.addFood(food1);
         meal.removeFood("ham");
         assertEquals(0, meal.addCalories());
+
+    }
+
+    @Test
+    void testRemoveFoodFalse() {
+        meal.addFood(food1);
+        meal.removeFood("bread");
+        assertEquals(100, meal.addCalories());
 
     }
 

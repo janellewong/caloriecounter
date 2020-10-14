@@ -57,10 +57,18 @@ public class DayTest {
     }
 
     @Test
-    void testRemoveMeal() {
+    void testRemoveMealTrue() {
         day.addMeal(meal1);
         day.removeMeal("breakfast");
         assertEquals(0, day.getNumberMeals());
+    }
+
+    @Test
+    void testRemoveMealFalse() {
+        day.addMeal(meal1);
+        day.removeMeal("bread");
+        assertEquals(1, day.getNumberMeals());
+
     }
 
     @Test
