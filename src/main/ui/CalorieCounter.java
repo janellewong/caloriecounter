@@ -127,7 +127,7 @@ public class CalorieCounter {
     }
 
     // MODIFIES: this
-    // EFFECTS: shows stats for your day
+    // EFFECTS: sets goal for your day
     private void setGoal() {
         System.out.println("Enter your goal in calories for today");
         int goal = input.nextInt();
