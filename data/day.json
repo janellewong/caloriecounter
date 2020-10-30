@@ -1,11 +1,17 @@
 {
-    "goal": 1800,
+    "goal": 5000,
     "day": [
         {
-            "meal": [{
-                "name": "yogurt",
-                "calories": 200
-            }],
+            "meal": [
+                {
+                    "name": "yogurt",
+                    "calories": 200
+                },
+                {
+                    "name": "bun",
+                    "calories": 200
+                }
+            ],
             "meal type": "breakfast"
         },
         {
@@ -13,7 +19,10 @@
             "meal type": "lunch"
         },
         {
-            "meal": [],
+            "meal": [{
+                "name": "bunssss",
+                "calories": 500
+            }],
             "meal type": "dinner"
         }
     ]

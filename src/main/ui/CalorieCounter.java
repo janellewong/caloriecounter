@@ -73,6 +73,7 @@ public class CalorieCounter {
     private void processCommand(String command) {
         if (command.equals("a")) {
             modifyMeal();
+            saveDay();
             viewStats();
         } else if (command.equals("d")) {
             setGoal();
@@ -177,11 +178,11 @@ public class CalorieCounter {
         }
 
         if (selection.equals("b")) {
-            return breakfast;
+            return day.getMeals().get(0);
         } else if (selection.equals("l")) {
-            return lunch;
+            return day.getMeals().get(1);
         } else {
-            return dinner;
+            return day.getMeals().get(2);
         }
     }
 
