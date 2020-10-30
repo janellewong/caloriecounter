@@ -1,0 +1,26 @@
+{
+    "goal": 2000,
+    "day": [
+        {
+            "meal": [{
+                "name": "coffee",
+                "calories": 50
+            }],
+            "meal type": "breakfast"
+        },
+        {
+            "meal": [{
+                "name": "ramen",
+                "calories": 400
+            }],
+            "meal type": "lunch"
+        },
+        {
+            "meal": [{
+                "name": "sandwich",
+                "calories": 300
+            }],
+            "meal type": "dinner"
+        }
+    ]
+}

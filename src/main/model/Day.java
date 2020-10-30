@@ -1,9 +1,15 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistance.Writable;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class Day {
+//EFFECTS: A list of all meals in a day
+public class Day implements Writable {
     private List<Meal> day;
     private int goal;
 
@@ -53,6 +59,7 @@ public class Day {
         day.remove(temp);
     }
 
+    //EFFECTS: returns true if name of meal is in day; false otherwise
     public boolean containsMeal(String name) {
         for (Meal m : day) {
             if (m.getMealType().equals(name)) {
@@ -96,6 +103,30 @@ public class Day {
         } else {
             return false;
         }
+    }
+
+    // EFFECTS: returns an unmodifiable list of meals in this day
+    public List<Meal> getMeals() {
+        return Collections.unmodifiableList(day);
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("goal", goal);
+        json.put("day", dayToJson());
+        return json;
+    }
+
+    // EFFECTS: returns things in this day as a JSON array
+    private JSONArray dayToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Meal m : day) {
+            jsonArray.put(m.toJson());
+        }
+
+        return jsonArray;
     }
 
 

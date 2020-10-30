@@ -1,6 +1,11 @@
 package model;
 
-public class Food {
+import persistance.Writable;
+import org.json.JSONObject;
+
+
+//EFFECTS: a food with the name and calories of food consumed
+public class Food implements Writable {
     private String name;          //name of the food or drink
     private int calories;         //calories of food consumed
 
@@ -26,6 +31,14 @@ public class Food {
     // EFFECTS: returns name
     public String getName() {
         return name;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("calories", calories);
+        return json;
     }
 
 

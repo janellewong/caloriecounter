@@ -1,9 +1,15 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistance.Writable;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class Meal {
+//EFFECTS: A list of all foods in a meal
+public class Meal implements Writable {
     private List<Food> meal;
     private String mealType;
 
@@ -35,6 +41,12 @@ public class Meal {
         meal.remove(temp);
     }
 
+    // EFFECTS: returns an unmodifiable list of foods in this meal
+    public List<Food> getFood() {
+        return Collections.unmodifiableList(meal);
+    }
+
+    //EFFECTS: returns true if name of food is in meal; false otherwise
     public boolean containsFood(String name) {
         for (Food f : meal) {
             if (f.getName().equals(name)) {
@@ -61,5 +73,23 @@ public class Meal {
             temp = temp + f.getName() + "\n";
         }
         return temp;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("meal type", mealType);
+        json.put("meal", foodToJson());
+        return json;
+    }
+
+    // EFFECTS: returns things in this meal as a JSON array
+    private JSONArray foodToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Food f : meal) {
+            jsonArray.put(f.toJson());
+        }
+        return jsonArray;
     }
 }
