@@ -3,6 +3,8 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -69,6 +71,16 @@ class MealTest {
         meal.addFood(food1);
         meal.addFood(food2);
         assertEquals("ham\nbread\n", meal.viewFoodListForMeal());
+    }
+
+    @Test
+    void testGetFood() {
+        List<Food> meal2 = meal.getFood();
+        meal.addFood(food1);
+        meal.addFood(food2);
+        assertEquals(food1, meal2.get(0));
+        assertEquals(food2, meal2.get(1));
+
     }
 
 

@@ -7,6 +7,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
+// Code modified from JsonSerializationDemo
+
+// Represents a writer that writes day info to file
 public class JsonWriter {
     private static final int TAB = 4;
     private PrintWriter writer;

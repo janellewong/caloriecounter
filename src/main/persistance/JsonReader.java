@@ -12,6 +12,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
+// Code modified from JsonSerializationDemo
+
 // Represents a reader that reads day info from JSON data stored in file
 public class JsonReader {
     private String source;

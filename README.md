@@ -34,3 +34,6 @@
  - As a user, I want to set calorie goal limit for my day
  - As a user, I want to be able to see the remaining number of calories I can eat today
  in order to not go past my calorie limit goal
+ - As a user, I want to be able to save the data of daily goal I set
+ as well as the foods, meals, and calories I ate in the day
+ - As a user, I want to be able to load the data saved previously and see what I ate 
