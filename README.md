@@ -37,3 +37,9 @@
  - As a user, I want to be able to save the data of daily goal I set
  as well as the foods, meals, and calories I ate in the day
  - As a user, I want to be able to load the data saved previously and see what I ate 
+ 
+  **Code Citations**
+  
+  https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git
+  
+ 
