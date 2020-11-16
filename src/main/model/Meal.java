@@ -25,6 +25,7 @@ public class Meal implements Writable {
         return mealType;
     }
 
+
     //EFFECTS: adds food to meal
     public void addFood(Food food) {
         meal.add(food);

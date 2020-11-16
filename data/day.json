@@ -1,28 +1,59 @@
 {
-    "goal": 5000,
+    "goal": 3000,
     "day": [
         {
             "meal": [
                 {
-                    "name": "yogurt",
-                    "calories": 200
+                    "name": "coffee",
+                    "calories": 100
                 },
                 {
-                    "name": "bun",
+                    "name": "croissant",
+                    "calories": 300
+                },
+                {
+                    "name": "cookie",
+                    "calories": 100
+                },
+                {
+                    "name": "yogurt",
                     "calories": 200
                 }
             ],
             "meal type": "breakfast"
         },
         {
-            "meal": [],
+            "meal": [
+                {
+                    "name": "sandwich",
+                    "calories": 200
+                },
+                {
+                    "name": "ice cream",
+                    "calories": 500
+                },
+                {
+                    "name": "rice",
+                    "calories": 200
+                }
+            ],
             "meal type": "lunch"
         },
         {
-            "meal": [{
-                "name": "bunssss",
-                "calories": 500
-            }],
+            "meal": [
+                {
+                    "name": "noodles",
+                    "calories": 400
+                },
+                {
+                    "name": "donuts",
+                    "calories": 300
+                },
+                {
+                    "name": "pie",
+                    "calories": 300
+                }
+            ],
             "meal type": "dinner"
         }
     ]
