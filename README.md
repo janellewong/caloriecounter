@@ -2,7 +2,6 @@
 
 ## Description
 
-
 **What will the application do?**
 
  - Record the food you eat every day into 3 meals: Breakfast, Lunch, Dinner 
@@ -17,13 +16,6 @@
  
  Those who want to track what they eat will use this application. 
  This includes those on a diet, or those who want to control their calorie intake
-
- **Why is this project of interest to me?**
- 
- I am interested in making this project because one of the goals for this quarantine
- season is to lose a few pounds, as well as develop healthier eating habits.
- I believe that an application like this one will help me keep track of what I am eating
- and help me go on a diet. 
  
  
  ## User Stories
