@@ -127,6 +127,7 @@ public class SidePanel extends JPanel {
         gc.weighty = 1;
 
         mainButtons();
+        makeEverythingInvisible();
         totalCals.setVisible(true);
         totalCalsRemaining.setVisible(true);
         totalCaloriesNumber.setVisible(true);
@@ -141,6 +142,23 @@ public class SidePanel extends JPanel {
         initializeMealQuestion();
 
         mainOptions();
+    }
+
+    public void makeEverythingInvisible() {
+        mealAdd.setVisible(false);
+        breakfast.setVisible(false);
+        lunch.setVisible(false);
+        dinner.setVisible(false);
+        foodNameDescription.setVisible(false);
+        foodName.setVisible(false);
+        foodNameSubmit.setVisible(false);
+        caloriesAddDescription.setVisible(false);
+        caloriesAdd.setVisible(false);
+        caloriesAddSubmit.setVisible(false);
+        newGoalDescription.setVisible(false);
+        caloriesGoal.setVisible(false);
+        caloriesGoalSubmit.setVisible(false);
+
     }
 
     public void mainOptions() {
@@ -440,19 +458,21 @@ public class SidePanel extends JPanel {
     public void fireAddProcess() {
         food = new Food(foodName.getText(), Integer.parseInt(caloriesAdd.getText()));
         selected.addFood(food);
-        saveDay();
         mainPanel.refresh();
         updateNum();
         mainScreen();
+        saveDay();
+
 
     }
 
     public void fireRemoveProcess() {
         selected.removeFood(foodName.getText());
-        saveDay();
         mainPanel.refresh();
         updateNum();
         mainScreen();
+        saveDay();
+
     }
 
 
@@ -473,10 +493,11 @@ public class SidePanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 day.changeGoal(Integer.parseInt(caloriesGoal.getText()));
-                saveDay();
                 mainPanel.refresh();
                 updateNum();
                 mainScreen();
+                saveDay();
+
 
             }
         });

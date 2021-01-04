@@ -4,10 +4,11 @@ import model.Day;
 import model.Food;
 import model.Meal;
 import persistance.JsonReader;
-import persistance.JsonWriter;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 
 public class MainPanel extends JPanel {
@@ -16,6 +17,9 @@ public class MainPanel extends JPanel {
     int calLunch;
     int calDinner;
     int calorieGoal;
+
+//    JButton newDay;
+//    JButton loadPrevDay;
 
     JLabel calBreakfastLabel;
     JLabel calLunchLabel;
@@ -56,10 +60,40 @@ public class MainPanel extends JPanel {
     protected static JsonReader jsonReader = new JsonReader(DAY_FILE);
 
 
-
     public MainPanel() {
         setPanelDimensions();
         loadDay();
+        myDay();
+//        initializeLoadAndNewDay();
+//        mainOptionsFirst();
+
+    }
+
+//    public void mainOptionsFirst() {
+//
+//        // if newDay button is pressed
+//        newDay.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                initial();
+//                myDay();
+//            }
+//        });
+//
+//         if loadDay button is pressed
+//        loadPrevDay.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                loadDay();
+//                myDay();
+//
+//            }
+//        });
+//    }
+
+    public void myDay() {
+//        newDay.setVisible(false);
+//        loadPrevDay.setVisible(false);
 
         day.addMeal(breakfast1);
         day.addMeal(lunch1);
@@ -80,7 +114,35 @@ public class MainPanel extends JPanel {
         initializeLunchList();
         initializeDinnerList();
 
+
     }
+
+//    // EFFECTS: initializes main buttons
+//    public void initializeLoadAndNewDay() {
+//
+//        newDay = new JButton("New Day");
+//        loadPrevDay = new JButton("Load Day");
+//
+//        gc.weightx = 1;
+//        gc.weighty = 1;
+//
+//        gc.gridx = 0;
+//        gc.gridy = 0;
+//
+//        add(newDay, gc);
+//        newDay.setPreferredSize(new Dimension(200, 80));
+//        newDay.setVisible(true);
+//
+//        gc.gridx = 0;
+//        gc.gridy = 0;
+//
+//        add(loadPrevDay, gc);
+//        loadPrevDay.setPreferredSize(new Dimension(200, 80));
+//        loadPrevDay.setVisible(true);
+//
+//
+//    }
+
 
     // EFFECTS: initializes the breakfast list
     public void initializeBreakfastList() {
@@ -89,7 +151,7 @@ public class MainPanel extends JPanel {
         tempListB.setModel(tempModelB);
         listOfBreakfast.setModel(modelB);
 
-        for (Food f: breakfast.getFood()) {
+        for (Food f : breakfast.getFood()) {
             tempModelB.addElement(f);
         }
 
@@ -99,7 +161,7 @@ public class MainPanel extends JPanel {
         gc.gridx = 0;
         gc.gridy = 3;
 
-        add(listOfBreakfast,gc);
+        add(listOfBreakfast, gc);
         listOfBreakfast.setVisible(true);
     }
 
@@ -110,7 +172,7 @@ public class MainPanel extends JPanel {
         tempListL.setModel(tempModelL);
         listOfLunch.setModel(modelL);
 
-        for (Food f: lunch.getFood()) {
+        for (Food f : lunch.getFood()) {
             tempModelL.addElement(f);
         }
 
@@ -120,7 +182,7 @@ public class MainPanel extends JPanel {
         gc.gridx = 0;
         gc.gridy = 5;
 
-        add(listOfLunch,gc);
+        add(listOfLunch, gc);
         listOfLunch.setVisible(true);
     }
 
@@ -131,7 +193,7 @@ public class MainPanel extends JPanel {
         tempListD.setModel(tempModelD);
         listOfDinner.setModel(modelD);
 
-        for (Food f: dinner.getFood()) {
+        for (Food f : dinner.getFood()) {
             tempModelD.addElement(f);
         }
 
@@ -141,7 +203,7 @@ public class MainPanel extends JPanel {
         gc.gridx = 0;
         gc.gridy = 7;
 
-        add(listOfDinner,gc);
+        add(listOfDinner, gc);
         listOfDinner.setVisible(true);
     }
 
@@ -155,6 +217,7 @@ public class MainPanel extends JPanel {
         dinnerLabel = new JLabel("Dinner");
 
     }
+
     // EFFECTS: sets position of labels
     public void titleLabels() {
         gc.weightx = 1;
@@ -162,14 +225,14 @@ public class MainPanel extends JPanel {
 
         gc.gridx = 1;
         gc.gridy = 0;
-        add(myDay,gc);
-        myDay.setFont(new Font("Bold",100,50));
+        add(myDay, gc);
+        myDay.setFont(new Font("Bold", 100, 50));
         myDay.setVisible(true);
 
         gc.gridx = 0;
         gc.gridy = 1;
-        add(goal,gc);
-        goal.setFont(new Font("Bold",100,30));
+        add(goal, gc);
+        goal.setFont(new Font("Bold", 100, 30));
         goal.setVisible(true);
     }
 
@@ -178,20 +241,20 @@ public class MainPanel extends JPanel {
 
         gc.gridx = 0;
         gc.gridy = 2;
-        add(breakfastLabel,gc);
-        breakfastLabel.setFont(new Font("Bold",100,30));
+        add(breakfastLabel, gc);
+        breakfastLabel.setFont(new Font("Bold", 100, 30));
         breakfastLabel.setVisible(true);
 
         gc.gridx = 0;
         gc.gridy = 4;
-        add(lunchLabel,gc);
-        lunchLabel.setFont(new Font("Bold",100,30));
+        add(lunchLabel, gc);
+        lunchLabel.setFont(new Font("Bold", 100, 30));
         lunchLabel.setVisible(true);
 
         gc.gridx = 0;
         gc.gridy = 6;
-        add(dinnerLabel,gc);
-        dinnerLabel.setFont(new Font("Bold",100,30));
+        add(dinnerLabel, gc);
+        dinnerLabel.setFont(new Font("Bold", 100, 30));
         dinnerLabel.setVisible(true);
     }
 
@@ -200,28 +263,27 @@ public class MainPanel extends JPanel {
 
         gc.gridx = 2;
         gc.gridy = 1;
-        add(calorieGoalLabel,gc);
-        calorieGoalLabel.setFont(new Font("Bold",100,30));
+        add(calorieGoalLabel, gc);
+        calorieGoalLabel.setFont(new Font("Bold", 100, 30));
         calorieGoalLabel.setVisible(true);
 
         gc.gridx = 2;
         gc.gridy = 2;
-        add(calBreakfastLabel,gc);
-        calBreakfastLabel.setFont(new Font("Bold",100,30));
+        add(calBreakfastLabel, gc);
+        calBreakfastLabel.setFont(new Font("Bold", 100, 30));
         calBreakfastLabel.setVisible(true);
 
         gc.gridx = 2;
         gc.gridy = 4;
-        add(calLunchLabel,gc);
-        calLunchLabel.setFont(new Font("Bold",100,30));
+        add(calLunchLabel, gc);
+        calLunchLabel.setFont(new Font("Bold", 100, 30));
         calLunchLabel.setVisible(true);
 
         gc.gridx = 2;
         gc.gridy = 6;
-        add(calDinnerLabel,gc);
-        calDinnerLabel.setFont(new Font("Bold",100,30));
+        add(calDinnerLabel, gc);
+        calDinnerLabel.setFont(new Font("Bold", 100, 30));
         calDinnerLabel.setVisible(true);
-
 
 
     }
@@ -267,6 +329,14 @@ public class MainPanel extends JPanel {
 
     }
 
+    // MODIFIES: this
+    // EFFECTS: initializes Day
+    private void initial() {
+        day = new Day(1800);
+        day.addMeal(breakfast1);
+        day.addMeal(lunch1);
+        day.addMeal(dinner1);
+    }
 
 
 }

@@ -1,22 +1,18 @@
 {
-    "goal": 3000,
+    "goal": 2700,
     "day": [
         {
             "meal": [
-                {
-                    "name": "coffee",
-                    "calories": 100
-                },
                 {
                     "name": "croissant",
                     "calories": 300
                 },
                 {
-                    "name": "cookie",
-                    "calories": 100
+                    "name": "yogurt",
+                    "calories": 200
                 },
                 {
-                    "name": "yogurt",
+                    "name": "bread",
                     "calories": 200
                 }
             ],
@@ -31,10 +27,6 @@
                 {
                     "name": "ice cream",
                     "calories": 500
-                },
-                {
-                    "name": "rice",
-                    "calories": 200
                 }
             ],
             "meal type": "lunch"
@@ -47,10 +39,6 @@
                 },
                 {
                     "name": "donuts",
-                    "calories": 300
-                },
-                {
-                    "name": "pie",
                     "calories": 300
                 }
             ],

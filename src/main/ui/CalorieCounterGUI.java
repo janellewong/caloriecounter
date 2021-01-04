@@ -16,22 +16,6 @@ public class CalorieCounterGUI extends JFrame {
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
 
-//                ImagePanel panel = new ImagePanel(
-//                        new ImageIcon("food image.png").getImage());
-
-//                ImagePanel panel = new ImagePanel(new ImageIcon(getClass()
-//                        .getResource("food image.png"))
-//                        .getImage());
-
-//                frame.add(new JLabel(new ImageIcon("food image.png")));
-
-
-//                frame.getContentPane().add(panel);
-//                frame.pack();
-//                frame.setVisible(true);
-
-
-
             }
         });
 
